@@ -42,8 +42,28 @@ docker compose version
 - Ambos deben devolver información de versión. Docker Compose usa la sintaxis docker compose (con espacio), no docker-compose.
 
 
+## 0.2. Crear directorio y descargar docker-compose.yml
 
-## 0.2. 
+Kiwi TCMS no proporciona imágenes versionadas en Docker Hub, pero el archivo docker-compose.yml oficial está disponible en GitHub .
+
+Repositorio oficial de Kiwi TCMS en GitHub: https://github.com/kiwitcms/Kiwi
+
+En PowerShell de VS Code:
+
+```powershell
+# Crear directorio de trabajo
+mkdir ~/kiwi-tcms
+cd ~/kiwi-tcms
+
+# Descargar docker-compose.yml
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/kiwitcms/Kiwi/master/docker-compose.yml" -OutFile "docker-compose.yml"
+```
+
+Verificar que se descargó:
+
+```powershell
+Get-Content docker-compose.yml -Head 20
+```
 
 
 ## 0.3. 
